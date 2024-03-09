@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+
+
+<div id="mainContent">
+    <h1>Countdown Timer</h1>
+
+    <div id="timer"></div>
+
+    <button id="startButton">START!</button>
+</div>
+
+<audio id="chime">
+    <source th:src="@{/chime.mp3}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script th:src="@{/countdown.js}"></script>
+<script>
+    // Set the timer duration in milliseconds
+    const timerDuration = 5 * 1000; // 5 seconds for testing
+
+    document.getElementById('timer').textContent = "30:00";
+
+    // Function to start the countdown when the button is clicked
+    document.getElementById('startButton').addEventListener('click', function() {
+        startCountdown(timerDuration);
+    });
+</script>
+
+</body>
+</html>
