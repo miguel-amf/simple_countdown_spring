@@ -24,8 +24,10 @@
 
 <script th:src="@{/countdown.js}"></script>
 <script>
-    // Set the timer duration in milliseconds
-    const timerDuration = 5 * 1000; // 5 seconds for testing
+
+    const setMinutes = 30;
+    // Convert Milliseconds to minutes
+    const timerDuration = setMinutes * 60 * 1000;
 
     document.getElementById('timer').textContent = "30:00";
 
