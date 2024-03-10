@@ -11,6 +11,7 @@ function formatTime(ms) {
 function updateTimerDisplay(remainingTime) {
     const timerElement = document.getElementById('timer');
     timerElement.textContent = formatTime(remainingTime);
+    document.title = 'Countdown: ' + formatTime(remainingTime);
 }
 
 // Function to play the chime sound
